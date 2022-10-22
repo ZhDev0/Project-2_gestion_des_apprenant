@@ -41,7 +41,7 @@
                                 {{ Session::get('apprenant_created') }}
                             </div>
                         @endif
-                        <form action="" method="POST">
+                        <form action="{{ route('apprenant.ajouter') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="prenom">Prenom</label>
