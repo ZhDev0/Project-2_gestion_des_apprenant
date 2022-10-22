@@ -12,6 +12,13 @@ class ApprenantController extends Controller
     }
 
     public function ajouterapprenantsumbit(Request $req) {
+
+        $ValidateData = $req->validate([
+            'prenom' => 'required',
+            'nom' => 'required',
+            'email' => 'required | email'
+        ]);
+
         DB::table('apprenant')->insert([
             'Prenom' => $req->prenom ,
             'Nom' => $req->nom,

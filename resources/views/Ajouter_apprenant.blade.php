@@ -47,14 +47,23 @@
                                 <label for="prenom">Prenom</label>
                                 <input type="text" name="prenom" id="prenom" class="form-control">
                             </div>
+                            @error('prenom')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="form-group">
                                 <label for="nom">Nom</label>
                                 <input type="text" name="nom" id="nom" class="form-control">
                             </div>
+                            @error('nom')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" name="email" id="email" class="form-control">
                             </div>
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <button type="submit" class="btn mt-3 btn-primary w-100">Envoyer</button>
                         </form>
                     </div>
