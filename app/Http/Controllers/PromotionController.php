@@ -11,6 +11,9 @@ class PromotionController extends Controller
         return view('Ajouter_promotion');
     }
     public function ajouterpromosumbit(Request $req) {
+        $validateData = $req->validate([
+            'nom_promo' => 'required'
+        ]);
         DB::table('promotion')->insert([
             'Nom_promo' => $req->nom_promo
         ]);

@@ -18,6 +18,9 @@
             background: black;
             color: white;
         }
+        .showall {
+            text-decoration: none
+        }
     </style>
 </head>
 
@@ -46,8 +49,12 @@
                             <div class="form-group">
                                 <label for="nom_promo">Nom De la Promotion</label>
                                 <input type="text" name="nom_promo" id="nom_promo" class="form-control">
+                                @error('nom_promo')
+                                    <div class="alert alert-danger mt-4">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn mt-3 btn-primary w-100">Envoyer</button>
+                            <a href="gestion_promotion" class="showall mt-3">Show All</a>
                         </form>
                     </div>
                 </div>
