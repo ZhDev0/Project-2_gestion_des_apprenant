@@ -24,3 +24,6 @@ Route::get('/Ajouter_apprenant', [ApprenantController::class, 'index'])->name('a
 Route::post('/Ajouter_promotion', [PromotionController::class, 'ajouterpromosumbit'])->name('promo.ajouter');
 Route::post('/Ajouter_apprenant', [ApprenantController::class, 'ajouterapprenantsumbit'])->name('apprenant.ajouter');
 Route::get('/gestion_promotion', [PromotionController::class, 'getAllPromotion'])->name('promo.get');
+Route::get('/edit_promotion/{id}', [PromotionController::class, 'editPromotion'])->name('promo.edit');
+Route::get('/delete_promotion/{id}', [PromotionController::class, 'deletePromotion'])->name('promo.delete');
+Route::post('/edit_promotion/{id}', [PromotionController::class, 'updatePromotion'])->name('promo.update');

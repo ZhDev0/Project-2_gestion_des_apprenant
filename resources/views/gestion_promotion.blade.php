@@ -64,10 +64,15 @@
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
                                     <td>{{ $value->Nom_promo }}</td>
-                                    <td><a href="" class="btn btn-success">Modifier</a></td>
-                                    <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="edit_promotion/{{$value->id}}" class="btn btn-success">Modifier</a></td>
+                                    <td><a href="delete_promotion/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
                                 </tr>
                                 @endforeach
+                                @if (Session::has('promo_deleted'))
+                                    <div class="alert alert-warning">
+                                        {{ Session::get('promo_deleted') }}
+                                    </div>
+                                @endif
                             </tbody>
                         </table>
                     </div>
