@@ -45,11 +45,11 @@
                         <table class="table table-hover">
                             <div class="link-container mb-3">
                                 <a href="{{ route('promo.index') }}" class="btn btn-primary">Ajouter Promotion</a>
-                                <form action="" method="">
+                                {{-- <form action="" method=""> --}}
                                     <div class="form-group">
-                                        <input type="text" name="search" class="form-control" placeholder="Chercher Promotion">
+                                        <input type="text" id="search" name="search" class="form-control" placeholder="Chercher Promotion">
                                     </div>
-                                </form>
+                                {{-- </form> --}}
                             </div>
                             <thead>
                                 <tr>
@@ -59,7 +59,7 @@
                                     <th scope="col">Supprimer</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tbody">
                                 @foreach ($promos as $value)
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
@@ -83,6 +83,8 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{ asset('js/Search.js') }}"></script>
 </body>
 
 </html>

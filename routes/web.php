@@ -27,3 +27,4 @@ Route::get('/gestion_promotion', [PromotionController::class, 'getAllPromotion']
 Route::get('/edit_promotion/{id}', [PromotionController::class, 'editPromotion'])->name('promo.edit');
 Route::get('/delete_promotion/{id}', [PromotionController::class, 'deletePromotion'])->name('promo.delete');
 Route::post('/edit_promotion/{id}', [PromotionController::class, 'updatePromotion'])->name('promo.update');
+Route::get('search', [PromotionController::class, 'search']);
