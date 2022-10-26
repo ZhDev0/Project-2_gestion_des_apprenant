@@ -45,7 +45,8 @@
             left: 50%;
             padding: 25px;
             border-radius: 5px;
-            background-image: url({{ asset('image/wp10021529-red-pill-wallpapers.jpg') }});
+            /* background-image: url({{ asset('image/wp10021529-red-pill-wallpapers.jpg') }}); */
+            background: rgba(0, 0, 0, 0.931);
             background-position: center;
             width: 920px;
             color: white;
