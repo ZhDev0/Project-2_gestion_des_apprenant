@@ -93,4 +93,10 @@ class ApprenantController extends Controller
         $promos = DB::table('promotion')->get();
         return view('Ajouter_apprenant', compact('promos'));
     }
+    public function getPromotionsForApprenant() {
+        $promotionid = DB::table('apprenant')
+        ->select('id_promotion')
+            ->get();
+        return view('gestion_apprenant',compact('promotionid'));
+    }
 }

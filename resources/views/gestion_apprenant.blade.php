@@ -49,6 +49,16 @@
                             <div class="link-container mb-3">
                                 <a href="{{ route('apprenant.ajouter') }}" class="btn btn-primary">Ajouter Apprenant</a>
                                 {{-- <form action="" method=""> --}}
+                                {{-- Start Combox --}}
+                                <select class="browser-default custom-select">
+                                    {{-- @foreach ($promotionid as $value) --}}
+                                    <option selected="">Choisissez Le Promotion</option>
+                                    <option value="">Promotion 1</option>
+                                    <option value="">Promotion 2</option>
+                                    <option value="">Promotion 3</option>
+                                    {{-- @endforeach --}}
+                                </select>
+                                {{-- End Combox --}}
                                 <div class="form-group">
                                     <input type="text" id="searcha" name="searcha" class="form-control"
                                         placeholder="Chercher Promotion">
@@ -194,6 +204,11 @@
             text: ['|', ' '],
             delay: 0,
             pause: 500
+        });
+        // ComboBox
+        // Material Select Initialization
+        $(document).ready(function() {
+            $('.mdb-select').materialSelect();
         });
     </script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
