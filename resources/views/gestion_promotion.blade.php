@@ -55,6 +55,7 @@
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Nom De Promotion</th>
+                                    <th scope="col">View</th>
                                     <th scope="col">Modifier</th>
                                     <th scope="col">Supprimer</th>
                                 </tr>
@@ -64,6 +65,7 @@
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
                                     <td>{{ $value->Nom_promo }}</td>
+                                    <td><a href="gestion_apprenant" class="btn btn-primary w-100">View</a></td>
                                     <td><a href="edit_promotion/{{$value->id}}" class="btn btn-success">Modifier</a></td>
                                     <td><a href="delete_promotion/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
                                 </tr>

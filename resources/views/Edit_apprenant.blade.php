@@ -21,7 +21,7 @@
         }
 
         .showall {
-            text-decoration: none
+            text-decoration: none;
         }
     </style>
 </head>
@@ -51,18 +51,34 @@
                                 {{ Session::get('promo_updated') }}
                             </div>
                         @endif
-                        <form action="" method="POST">
+                        <form method="POST">
                             @csrf
                             <div class="form-group">
+                                <label for="nom_promo"></label>
+                                <input type="text" name="prenom_promo" id="prenom_promo"
+                                    value="{{ $apprenant->Prenom }}" class="form-control">
+                                {{-- @error('nom_promo')
+                                    <div class="alert alert-danger mt-4">{{ $message }}</div>
+                                @enderror --}}
+                            </div>
+                            <div class="form-group">
                                 <label for="nom_promo">Nom De la Promotion</label>
-                                <input type="text" name="nom_promo" id="nom_promo" value="{{ $promo->Nom_promo }}"
+                                <input type="text" name="nom_promo" id="nom_promo" value="{{ $apprenant->Nom }}"
                                     class="form-control">
                                 {{-- @error('nom_promo')
                                     <div class="alert alert-danger mt-4">{{ $message }}</div>
                                 @enderror --}}
                             </div>
+                            <div class="form-group">
+                                <label for="nom_promo">Nom De la Promotion</label>
+                                <input type="text" name="email_promo" id="email_promo"
+                                    value="{{ $apprenant->email }}" class="form-control">
+                                {{-- @error('nom_promo')
+                                    <div class="alert alert-danger mt-4">{{ $message }}</div>
+                                @enderror --}}
+                            </div>
                             <button type="submit" class="btn mt-3 btn-success w-100">Modifier</button>
-                            <a href="{{ route('promo.get') }}" class="showall">Show All</a>
+                            <a href="{{ route('apprenant.get') }}" class="showall">Show All</a>
                         </form>
                     </div>
                 </div>

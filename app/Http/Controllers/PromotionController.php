@@ -57,11 +57,16 @@ class PromotionController extends Controller
                 foreach ($searchPromotion as $promotion) {
                     $output .= '<tr>
                 <td>' . $promotion->id . '</td>
-                <td>' . $promotion->Nom_promo . '</td>';
-
+                <td>' . $promotion->Nom_promo . '</td>
+                <td>' . "" . '</td>
+                <td>' . "" . '</td>';
                 }
                 return Response($output);
             }
         }
     }
+    // public function getIdPromo($id) {
+    //    $getIdPromo =  db::table('apprenant')->where('id_promotion',$id)->get();
+    //     return view('gestion_apprenant', compact('getIdPromo'));
+    // }
 }

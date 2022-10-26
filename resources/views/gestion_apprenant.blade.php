@@ -47,7 +47,7 @@
                                 <a href="{{ route('apprenant.ajouter') }}" class="btn btn-primary">Ajouter Apprenant</a>
                                 {{-- <form action="" method=""> --}}
                                     <div class="form-group">
-                                        <input type="text" id="search" name="search" class="form-control" placeholder="Chercher Promotion">
+                                        <input type="text" id="searcha" name="searcha" class="form-control" placeholder="Chercher Promotion">
                                     </div>
                                 {{-- </form> --}}
                             </div>
@@ -61,7 +61,7 @@
                                     <th scope="col">Supprimer</th>
                                 </tr>
                             </thead>
-                            <tbody >
+                            <tbody id="tbody">
                                 @foreach ($apprenant as $value)
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
@@ -69,9 +69,14 @@
                                     <td>{{ $value->Nom }}</td>
                                     <td>{{ $value->email }}</td>
                                     <td><a href="edit_apprenant/{{$value->id}}" class="btn btn-success">Modifier</a></td>
-                                    <td><a href="delete_promotion/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="delete_apprenant/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
                                 </tr>
                                 @endforeach
+                                @if (Session::has('apprenant_deleted'))
+                                    <div class="alert alert-warning">
+                                        {{ Session::get('apprenant_deleted') }}
+                                    </div>
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -83,7 +88,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="{{ asset('js/Search.js') }}"></script>
+    <script src="{{ asset('js/SearchA.js') }}"></script>
 </body>
 
 </html>

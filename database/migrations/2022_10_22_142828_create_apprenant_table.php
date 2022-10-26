@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('Nom');
             $table->text('email');
             $table->timestamps();
+            $table->unsignedBigInteger('id_promotion');
+            $table->foreign('id_promotion')
+            ->references('id')
+            ->on('promotion')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

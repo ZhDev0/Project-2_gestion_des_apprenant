@@ -65,6 +65,7 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             <button type="submit" class="btn mt-3 btn-primary w-100">Envoyer</button>
+                            <a href="{{ route('apprenant.get') }}" class="showall">Show All</a>
                         </form>
                     </div>
                 </div>

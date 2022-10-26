@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\PromotionController;
+use App\Models\Apprenant;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,7 @@ Route::post('/edit_promotion/{id}', [PromotionController::class, 'updatePromotio
 Route::get('search', [PromotionController::class, 'search'])->name('promo.search');
 Route::get('/gestion_apprenant', [ApprenantController::class, 'getAllApprenant'])->name('apprenant.get');
 Route::get('/edit_apprenant/{id}', [ApprenantController::class, 'editApprenant'])->name('apprenant.edit');
+// Route::get('/gestion_apprenant/{id}', [PromotionController::class, 'getIdPromo'])->name('apprenant.getid');
+Route::post('/edit_apprenant/{id}', [ApprenantController::class, 'updateApprenant'])->name('apprenant.update');
+Route::get('searcha', [ApprenantController::class, 'searcha'])->name('apprenant.search');
+Route::get('/delete_apprenant/{id}', [ApprenantController::class, 'deleteApprenant'])->name('apprenant.delete');
