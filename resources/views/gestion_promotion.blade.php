@@ -25,6 +25,38 @@
             justify-content: space-between;
             align-content: center;
         }
+
+        .modal {
+            display: none;
+        }
+
+        .modal-back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .25)
+        }
+
+        .modal-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 25px;
+            border-radius: 5px;
+            background-image: url({{ asset('image/wp10021529-red-pill-wallpapers.jpg') }});
+            background-position: center;
+            width: 920px;
+            color: white;
+            height: 500px;
+            transform: translate(-50%, -50%);
+        }
+        .modal-container > p {
+            text-align: center;
+            margin-top: 20%;
+            font-size: 30px;
+        }
     </style>
 </head>
 
@@ -35,6 +67,15 @@
             <span id="cursor"></span>
         </marquee>
         {{-- <marquee behavior="scroll" direction="right" scrollamount="12"></marquee> --}}
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-back"></div>
+
+        <div class="modal-container">
+            <p> Welcome to <span style="color: orange">Project-2</span> Presented By<span style="color: green"> OmarZR</span><a href="#" id="modal-close">[X]</a>
+            </p>
+            <br />
+        </div>
     </div>
 
     {{-- <marquee behavior="" direction="">Follow ZhDev0 On GitHub !!</marquee> --}}
@@ -192,6 +233,27 @@
             delay: 0,
             pause: 500
         });
+    </script>
+    <script>
+        document.getElementById('modal').style.display = 'block'
+        window.addEventListener('scroll', function(e) {
+            setTimeout(() => {
+                document.getElementById('modal').style.display = 'block'
+            }, 2000)
+        });
+        let modalAlreadyShowed = false
+
+        window.addEventListener('scroll', function(e) {
+            if (!modalAlreadyShowed) {
+                setTimeout(() => {
+                    document.getElementById('modal').style.display = 'block'
+                }, 2000)
+                modalAlreadyShowed = true
+            }
+        });
+        document.getElementById('modal-close').addEventListener('click', function(e) {
+            document.getElementById('modal').style.display = 'none'
+        })
     </script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
