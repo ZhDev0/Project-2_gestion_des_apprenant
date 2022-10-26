@@ -19,20 +19,22 @@ class ApprenantController extends Controller
         $ValidateData = $req->validate([
             'prenom' => 'required',
             'nom' => 'required',
-            'email' => 'required | email'
+            'email' => 'required | email',
+            'promotion' => 'required'
         ]);
 
         DB::table('apprenant')->insert([
             'Prenom' => $req->prenom,
             'Nom' => $req->nom,
-            'email' => $req->email
+            'email' => $req->email,
+            'id_promotion' => $req->promotion
         ]);
         return back()->with('apprenant_created', 'Apprenant Has Been Created SuccessFully !!');
     }
     public function getAllApprenant()
     {
-        $apprenant = DB::table('apprenant')->get();
-        return view('gestion_apprenant', compact('apprenant'));
+        $apprenantt = DB::table('apprenant')->get();
+        return view('gestion_apprenant', compact('apprenantt'));
     }
     public function editApprenant($id)
     {
@@ -75,5 +77,20 @@ class ApprenantController extends Controller
                 return Response($outputt);
             }
         }
+    }
+    public function getApprenantByID($id)
+    {
+        $apprenantt = DB::table('apprenant')->where('id', $id)->get();
+        return view('gestion_apprenant', compact('apprenantt'));
+    }
+    public function getApprenantByID2($id)
+    {
+        $apprenanttt = DB::table('apprenant')->where('id', $id)->get();
+        return view('Ajouter_apprenant', compact('apprenanttt'));
+    }
+    public function getAllPromotion2()
+    {
+        $promos = DB::table('promotion')->get();
+        return view('Ajouter_apprenant', compact('promos'));
     }
 }

@@ -59,17 +59,18 @@
                                     <th scope="col">email</th>
                                     <th scope="col">Modifier</th>
                                     <th scope="col">Supprimer</th>
+
                                 </tr>
                             </thead>
                             <tbody id="tbody">
-                                @foreach ($apprenant as $value)
+                                @foreach ($apprenantt as $value)
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
                                     <td>{{ $value->Prenom }}</td>
                                     <td>{{ $value->Nom }}</td>
                                     <td>{{ $value->email }}</td>
-                                    <td><a href="edit_apprenant/{{$value->id}}" class="btn btn-success">Modifier</a></td>
-                                    <td><a href="delete_apprenant/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ url('edit_apprenant') }}/{{ $value->id }}" class="btn btn-success">Modifier</a></td>
+                                    <td><a href="{{ url('delete_apprenant') }}/{{ $value->id }}" class="btn btn-danger">Supprimer</a></td>
                                 </tr>
                                 @endforeach
                                 @if (Session::has('apprenant_deleted'))
@@ -78,6 +79,8 @@
                                     </div>
                                 @endif
                             </tbody>
+                            <a href="{{ route('promo.get') }}" class="btn bg-dark text-white">Back</a>
+                            {{-- promo.get --}}
                         </table>
                     </div>
                 </div>

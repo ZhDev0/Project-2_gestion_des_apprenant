@@ -78,7 +78,8 @@
                                 @enderror --}}
                             </div>
                             <button type="submit" class="btn mt-3 btn-success w-100">Modifier</button>
-                            <a href="{{ route('apprenant.get') }}" class="showall">Show All</a>
+                            <a href="gestion_promotion" class="btn bg-black text-white w-100 mt-2">Annuler | Back</a>
+                            {{-- <a href="{{ route('apprenant.get') }}" class="showall">Show All</a> --}}
                         </form>
                     </div>
                 </div>

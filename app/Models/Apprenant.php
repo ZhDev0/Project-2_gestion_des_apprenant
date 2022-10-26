@@ -12,4 +12,14 @@ class Apprenant extends Model
     protected $col = ['Nom'];
     protected $coll = ['Prenom'];
     protected $colll = ['email'];
+    protected $fillable=[
+        'id',
+        'Prenom',
+        'Nom',
+        'email'
+    ];
+
+    public function promotion(){
+        return $this->belongsTo(Promotion::class);
+    }
 }

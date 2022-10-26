@@ -54,7 +54,7 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn mt-3 btn-primary w-100">Envoyer</button>
-                            <a href="gestion_promotion" class="showall">Show All</a>
+                            <a href="gestion_promotion" class="btn bg-black text-white w-100 mt-2">Annuler | Back</a>
                         </form>
                     </div>
                 </div>

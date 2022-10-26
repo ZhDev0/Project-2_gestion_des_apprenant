@@ -64,8 +64,16 @@
                             @error('email')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                            <div class="form-group">
+                                <label for="email">Promotion</label>
+                                <input type="text" name="promotion" id="promotion" class="form-control">
+                            </div>
+                            @error('promotion')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <button type="submit" class="btn mt-3 btn-primary w-100">Envoyer</button>
-                            <a href="{{ route('apprenant.get') }}" class="showall">Show All</a>
+                            <a href="gestion_promotion" class="btn bg-black text-white w-100 mt-2">Annuler | Back</a>
+                            {{-- <a href="gestion_apprenant/{{ $promos->id }}" class="showall">Show All</a> --}}
                         </form>
                     </div>
                 </div>
